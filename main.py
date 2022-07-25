@@ -1,4 +1,5 @@
 from cipher import cipher
+from decipher import decipher
 
 print("Operações disponíveis: \n1- Cifrar\n2- Decifrar\n3- Atacar\n ")
 print("Que operação deseja realizar?")
@@ -9,12 +10,15 @@ if chosen_option == 1:
     password = input()
     print("Digite sua mensagem")
     message = input()
-    cipher(password, message)
+    cifrada = cipher(password, message)
+    print(cifrada)
 elif chosen_option == 2:
     print("Digite sua cifra")
     cifra = input()
     print("Digite sua senha")
     password = input()
+    decifrado = decipher(cifra, password)
+    print (decifrado)
 elif chosen_option == 3:
     print("Digite sua cifra")
     cifra = input()
