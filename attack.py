@@ -24,24 +24,24 @@ def ataque(cifra):
     for i in range(tamanho):
         
         # se estamos dentro do grupo de 3 letras, e a cifra não é espaço vazio, atualiza as letras de analise
-        if(cifra[i] != " " and j < 3):
+        if cifra[i] != " " and j < 3:
             letras = letras + cifra[i]
             j = j + 1
         
         dist_sem_espaco = 0
             
         # caso já seja conhecido o grupo de 3 letras a ser analizado
-        if(j == 3):
+        if j == 3:
             # varre a string da cifra inteira vendo quantas vezes o grupo de letras se repetiu
             for a in range(tamanho):
                 
-                if(cifra[a] != " "):
+                if cifra[a] != " ":
                     dist_sem_espaco = dist_sem_espaco + 1 
                 
-                if( a < (tamanho - 3)):
+                if a < (tamanho - 3):
                     
                     # salvamos a quantidade de vezes que repetiu
-                    if(cifra[a] == letras[0]):
+                    if cifra[a] == letras[0]:
                         if((cifra[a+1] == " ")):
                             
                             # achamos uma repetição e ignoramos o espaço no meio: "a bc"
@@ -80,7 +80,7 @@ def ataque(cifra):
                                     repeticao = repeticao + 1  
 
             # se o grupo de letras repetiu em algum ponto, salvamos
-            if(repeticao != 0):
+            if repeticao != 0:
                 itens.append(letras)
                 itens.append(repeticao)
                 itens.append(dist)
@@ -107,11 +107,11 @@ def ataque(cifra):
         print("Distância entre repetição: " + str(itens[j]) + "\n")
         
         mod = 1
-        if(itens[j] != 0):
+        if itens[j] != 0:
             for k in range(10):
-                if(k != 0):
+                if k != 0:
                     mod = (itens[j] % k)
-                if(mod == 0): 
+                if mod == 0: 
                     print("Distância diviśivel por " + str(k))
         j = j + 1
 
@@ -126,7 +126,7 @@ def ataque(cifra):
     # mesmo deslocamento, mesma frequencia da língua escolhida, possibilitando um bom chute
 
     # Inglês
-    if(op == 1):
+    if op == 1:
         
         print("Iniciando análise para texto em Inglês!")
         
@@ -136,7 +136,7 @@ def ataque(cifra):
             frequencia = pega_frequencia_ing(cifra, tamanho_key_chute, j)
         
     # Português    
-    if(op == 2):
+    if op == 2:
         
         print("Iniciando análise para texto em Português!")
         # faz isso para cada letra "y" dentro do tamanho da sugestão de chave, pega um input com sugestão do deslocamento 

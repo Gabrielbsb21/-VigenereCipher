@@ -16,7 +16,7 @@ def decipher(cipher, key):
 
     for i in range(size):
 
-        if(cifra_num[i] == (-65)):
+        if cifra_num[i] == (-65):
 
             msg_decifrada_num.append(32)
 
