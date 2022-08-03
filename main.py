@@ -1,7 +1,7 @@
 from cipher import cipher
 from decipher import decipher
 from save import save
-from attack import ataque
+from attack2 import main
 
 print("Operações disponíveis: \n1- Cifrar\n2- Decifrar\n3- Atacar\n ")
 print("Que operação deseja realizar?")
@@ -25,10 +25,6 @@ elif chosen_option == 2:
     print (decifrado)
 elif chosen_option == 3:
     print("Digite sua cifra")
-    cifra = input()
-    cifra = cifra.lower()
-    cifra = cifra.replace(',', "").replace('.', "").replace('-', "").replace('"', "").replace(':', "").replace(';', "").replace("'", "")
-
-    resultado = ataque(cifra)
+    main()
 else:
     print("Operação Inválida")
